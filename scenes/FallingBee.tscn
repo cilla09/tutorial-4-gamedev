@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://7t3bw4l3pj0u"]
+
+[ext_resource type="Texture2D" uid="uid://cmlt5c4ma3gsq" path="res://assets/kenney_platformerpack/PNG/Enemies/bee.png" id="1_3fq67"]
+[ext_resource type="Script" uid="uid://ci1eewj1hyn32" path="res://scenes/FallingObject.gd" id="2_sh4lh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o72ex"]
+radius = 49.0
+height = 98.0
+
+[node name="FallingBee" type="RigidBody2D" unique_id=1287138664]
+disable_mode = 1
+
+[node name="Bee" type="Sprite2D" parent="." unique_id=1299001818]
+texture = ExtResource("1_3fq67")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=107813839]
+script = ExtResource("2_sh4lh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=407909734]
+shape = SubResource("CapsuleShape2D_o72ex")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_FallArea_body_entered"]

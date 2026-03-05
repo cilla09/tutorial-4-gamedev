@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b118pvmscylk6"]
+
+[ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="1_clc22"]
+[ext_resource type="Script" uid="uid://ci1eewj1hyn32" path="res://scenes/FallingObject.gd" id="1_o72ex"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o72ex"]
+radius = 35.0
+height = 110.0
+
+[node name="FallingFish" type="RigidBody2D" unique_id=1287138664]
+disable_mode = 1
+
+[node name="FishBlue" type="Sprite2D" parent="." unique_id=1299001818]
+rotation = 3.1415927
+texture = ExtResource("1_clc22")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=107813839]
+script = ExtResource("1_o72ex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=407909734]
+shape = SubResource("CapsuleShape2D_o72ex")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_FallArea_body_entered"]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://jok3tkqu8yxb"]
+
+[ext_resource type="Script" uid="uid://lvvqymnap85y" path="res://scenes/FallResetArea1.gd" id="1_okq3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_daiof"]
+size = Vector2(650, 19)
+
+[node name="FallResetArea" type="Area2D" unique_id=485264291]
+script = ExtResource("1_okq3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=59636277]
+position = Vector2(315, -0.5)
+shape = SubResource("RectangleShape2D_daiof")
+
+[connection signal="body_entered" from="." to="." method="_on_Area_Trigger_body_entered"]
