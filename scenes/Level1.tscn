@@ -57,9 +57,12 @@ sources/0 = SubResource("TileSetAtlasSource_odhdn")
 
 [node name="Level1" type="Node2D" unique_id=2116484748]
 
-[node name="Background" type="Sprite2D" parent="." unique_id=105867118]
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=669798388]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=105867118]
 modulate = Color(1, 1, 1, 0.63529414)
-position = Vector2(998, -109)
+position = Vector2(865, -58.000004)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_n34uq")
 

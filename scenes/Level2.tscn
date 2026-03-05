@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cl84fqhk2yaeb" path="res://scenes/FallResetArea2.gd" id="4_sp0w3"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="5_4p0dt"]
 [ext_resource type="PackedScene" uid="uid://1bfdvgjqq7aa" path="res://scenes/WinArea.tscn" id="6_qwp14"]
-[ext_resource type="Script" uid="uid://bksm3gl0rwsgo" path="res://scenes/spawner.gd" id="7_qwp14"]
+[ext_resource type="Script" uid="uid://bksm3gl0rwsgo" path="res://scenes/Spawner.gd" id="7_qwp14"]
 [ext_resource type="PackedScene" uid="uid://7t3bw4l3pj0u" path="res://scenes/FallingBee.tscn" id="8_xpq2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6gr7"]
@@ -999,9 +999,12 @@ sources/0 = SubResource("TileSetAtlasSource_l6gr7")
 
 [node name="Level2" type="Area2D" unique_id=1440505049]
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1101200957]
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2054082419]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=1101200957]
 modulate = Color(1, 1, 1, 0.63529414)
-position = Vector2(-327, -283)
+position = Vector2(-153, -39.000015)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_0jmjk")
 

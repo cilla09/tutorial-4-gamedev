@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Tutorial 4 Template"
-run/main_scene="uid://yqmk0vpvnyxr"
+run/main_scene="uid://g1b35y8xj8vv"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
 
