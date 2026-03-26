@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://bksm3gl0rwsgo" path="res://scenes/Spawner.gd" id="6_76388"]
 [ext_resource type="PackedScene" uid="uid://b118pvmscylk6" path="res://scenes/FallingFish.tscn" id="7_svatc"]
 [ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="10_kbo48"]
-[ext_resource type="Script" uid="uid://buctmpsqgpth3" path="res://scenes/ChangeScene.gd" id="11_4dyl1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
 texture = ExtResource("2_bwv4p")
@@ -81,7 +80,6 @@ sceneName = "Level2"
 [node name="FallResetArea" parent="." unique_id=485264291 instance=ExtResource("5_lrl65")]
 position = Vector2(-854, 565)
 scale = Vector2(5, 5)
-sceneName = "Level1"
 
 [node name="Player" parent="." unique_id=1201986984 instance=ExtResource("1")]
 position = Vector2(415, 133)
@@ -101,17 +99,3 @@ obstacle = ExtResource("7_svatc")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=718365245]
 
 [node name="LifeCounter" parent="CanvasLayer" unique_id=1056453619 instance=ExtResource("10_kbo48")]
-
-[node name="MenuButton" type="Button" parent="CanvasLayer" unique_id=821336178]
-anchors_preset = -1
-anchor_right = 0.095000006
-anchor_bottom = 0.080000006
-offset_left = 1044.0
-offset_top = 16.0
-offset_right = 1004.56
-offset_bottom = -2.840004
-text = "MENU"
-script = ExtResource("11_4dyl1")
-sceneName = "MenuScreen"
-
-[connection signal="pressed" from="CanvasLayer/MenuButton" to="CanvasLayer/MenuButton" method="_on_pressed"]

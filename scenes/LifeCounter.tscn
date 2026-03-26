@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://751ou282p0pr"]
+
+[ext_resource type="Script" uid="uid://0iib1pr1t8yb" path="res://scenes/Lives.gd" id="1_wysaa"]
+
+[node name="LifeCounter" type="MarginContainer" unique_id=1056453619]
+
+[node name="Label" type="Label" parent="." unique_id=1112998494]
+layout_mode = 2
+script = ExtResource("1_wysaa")

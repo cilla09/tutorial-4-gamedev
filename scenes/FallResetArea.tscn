@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jok3tkqu8yxb"]
 
-[ext_resource type="Script" uid="uid://lvvqymnap85y" path="res://scenes/FallResetArea1.gd" id="1_okq3e"]
+[ext_resource type="Script" uid="uid://lvvqymnap85y" path="res://scenes/FallResetArea.gd" id="1_okq3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daiof"]
 size = Vector2(650, 19)

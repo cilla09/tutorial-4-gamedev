@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bxqfyqkrspkqe"]
+
+[ext_resource type="Script" uid="uid://buctmpsqgpth3" path="res://scenes/ChangeScene.gd" id="1_thihp"]
+
+[node name="MenuScreen" type="ColorRect" unique_id=1029136436]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15040058, 0.5338753, 0.99999994, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1461474519]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1609505561]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=999685086]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1441317245]
+layout_mode = 2
+text = "Home"
+script = ExtResource("1_thihp")
+sceneName = "MainMenu"
+
+[node name="Level1Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=15902994]
+layout_mode = 2
+text = "Go to Level 1"
+script = ExtResource("1_thihp")
+sceneName = "Level1"
+
+[node name="Level2Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1183082252]
+layout_mode = 2
+text = "Go to Level 2"
+script = ExtResource("1_thihp")
+sceneName = "Level2"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HomeButton" to="HBoxContainer/VBoxContainer/HomeButton" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Level1Button" to="HBoxContainer/VBoxContainer/Level1Button" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Level2Button" to="HBoxContainer/VBoxContainer/Level2Button" method="_on_pressed"]

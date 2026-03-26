@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bjrgilkw6m3gd"]
+
+[ext_resource type="Script" uid="uid://dq8ulku5c0xj2" path="res://scenes/StartGame.gd" id="1_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="1_yqorp"]
+[ext_resource type="Script" uid="uid://bvereu3ff25ls" path="res://scenes/ResetChangeSceneLink.gd" id="2_2wh52"]
+
+[node name="MainMenu" type="MarginContainer" unique_id=2063001407]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1649661447]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=195205932]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1398102307]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Don't Let It 
+Touch You"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1898125087]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="StartButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=2080868241]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8906423, 0, 0.2043154, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_constants/underline_spacing = 2
+theme_override_font_sizes/font_size = 36
+text = "Start Game"
+script = ExtResource("1_0ykhv")
+scene_to_load = "Level1"
+
+[node name="StageSelectButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1489710523]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7176471, 0.42352942, 0.8980392, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Stage Select"
+script = ExtResource("2_2wh52")
+sceneName = "StageSelectScreen"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1919843699]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=1128191743]
+layout_mode = 2
+texture = ExtResource("1_yqorp")
+stretch_mode = 3
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/StartButton" to="HBoxContainer/VBoxContainer/VBoxContainer/StartButton" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/StageSelectButton" to="HBoxContainer/VBoxContainer/VBoxContainer/StageSelectButton" method="_on_pressed"]

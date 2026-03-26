@@ -4,11 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_g8psw"]
 [ext_resource type="Texture2D" uid="uid://1cmkdw30hlrq" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_snow.png" id="1_kkoku"]
 [ext_resource type="PackedScene" uid="uid://jok3tkqu8yxb" path="res://scenes/FallResetArea.tscn" id="3_l6gr7"]
-[ext_resource type="Script" uid="uid://cl84fqhk2yaeb" path="res://scenes/FallResetArea2.gd" id="4_sp0w3"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="5_4p0dt"]
 [ext_resource type="PackedScene" uid="uid://1bfdvgjqq7aa" path="res://scenes/WinArea.tscn" id="6_qwp14"]
 [ext_resource type="Script" uid="uid://bksm3gl0rwsgo" path="res://scenes/Spawner.gd" id="7_qwp14"]
 [ext_resource type="PackedScene" uid="uid://7t3bw4l3pj0u" path="res://scenes/FallingBee.tscn" id="8_xpq2v"]
+[ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="9_0jmjk"]
+[ext_resource type="Script" uid="uid://buctmpsqgpth3" path="res://scenes/ChangeScene.gd" id="10_v8268"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6gr7"]
 texture = ExtResource("1_kkoku")
@@ -1019,7 +1020,6 @@ tile_set = SubResource("TileSet_sp0w3")
 [node name="FallResetArea" parent="." unique_id=485264291 instance=ExtResource("3_l6gr7")]
 position = Vector2(-1277, 513)
 scale = Vector2(2, 5)
-script = ExtResource("4_sp0w3")
 sceneName = "Level2"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=15570930]
@@ -1032,3 +1032,21 @@ texture = ExtResource("5_4p0dt")
 position = Vector2(-330, -777)
 script = ExtResource("7_qwp14")
 obstacle = ExtResource("8_xpq2v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1613733101]
+
+[node name="LifeCounter" parent="CanvasLayer" unique_id=1056453619 instance=ExtResource("9_0jmjk")]
+
+[node name="MenuButton" type="Button" parent="CanvasLayer" unique_id=1081221849]
+anchors_preset = -1
+anchor_right = 0.095000006
+anchor_bottom = 0.080000006
+offset_left = 1065.0
+offset_top = 16.0
+offset_right = 1025.5599
+offset_bottom = -2.840004
+text = "MENU"
+script = ExtResource("10_v8268")
+sceneName = "MenuScreen"
+
+[connection signal="pressed" from="CanvasLayer/MenuButton" to="CanvasLayer/MenuButton" method="_on_pressed"]
